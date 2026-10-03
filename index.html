@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Bubu ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  padding: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.start {
+  animation: muncul 1.5s ease;
+}
+
+.heart-big {
+  font-size: 75px;
+  animation: detak 1.2s infinite;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+button {
+  border: none;
+  background: #fff;
+  color: #ff4f75;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+.message {
+  display: none;
+  background: rgba(255,255,255,.95);
+  color: #444;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: left;
+  line-height: 1.7;
+  box-shadow: 0 10px 35px rgba(0,0,0,.25);
+  animation: naik 1s ease;
+}
+
+.message h2 {
+  text-align: center;
+  color: #ff4f75;
+}
+
+.message p {
+  white-space: pre-line;
+}
+
+.signature {
+  text-align: center;
+  color: #ff4f75;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  font-size: 20px;
+  animation: terbang 5s linear forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes muncul {
+  from { opacity: 0; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes naik {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes detak {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes terbang {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="start" id="start">
+    <div class="heart-big">❤️</div>
+    <h1>BUAT BUBU 💗</h1>
+    <p>ADA PESAN KECIL DARI DIMAS...</p>
+    <button onclick="bukaPesan()">BUKA PESAN ❤️</button>
+  </div>
+
+  <div class="message" id="message">
+    <h2>💗 HALO BUBU 💗</h2>
+
+    <p>
+MAAFIN YA, MALAM INI AKU OFF DULUAN. AKU TAHU KAMU LAGI BETE, LAGI CAPEK, TAPI AKU MALAH OFF DULUAN. MAAF YA BUBU. 🥺❤️
+
+KAN AKU MIKIRNYA KAMU MAU NONTON, JADI KAMU PASTI LAGI ASIK NONTON. JADI AKU MIKIR, AKU BESOK HARUS BANGUN PAGI, UDAH DEH AKU TIDUR DULUAN.
+
+MAAFIN AKU YA BUBU. AKU TAHU KAMU CAPEK, TAPI AKU BUKANNYA NGERTIIN KAMU, BUKANNYA NEMENIN KAMU, MALAH HILANG GITU AJA. 😔❤️
+
+MAAFIN YA... BUBU NGAMBEK YA SAMA AKU? 🥺
+
+BUBU NGGAK BOLEH BETE, YA. ❤️
+
+MAAFIN AKU YA BUBU. MALAM INI AKU MALAH BIKIN KAMU BETE. HARUSNYA AKU BIKIN MOOD KAMU NAIK, EH MALAH BIKIN KAMU BETE. 😭❤️
+
+AKU JUGA MINTA MAAF, AKU SUKA BETE-BETE NGGAK JELAS. 🥺
+
+YA, MAAFIN AKU YA BUBU. ❤️
+
+LOVE YOU BUBU ❤️❤️❤️
+
+JANGAN MARAH YA...
+JANGAN NGAMBEK YA BUBU... 🥺💗
+
+LOVE YOUUUU BUBUUU ❤️❤️❤️
+    </p>
+
+    <div class="signature">
+      — DIMAS 💗
+    </div>
+  </div>
+
+</div>
+
+<script>
+function bukaPesan() {
+  document.getElementById("start").style.display = "none";
+  document.getElementById("message").style.display = "block";
+
+  for (let i = 0; i < 25; i++) {
+    setTimeout(buatHati, i * 120);
+  }
+}
+
+function buatHati() {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = ["❤️","💗","💕","💖","💘"][Math.floor(Math.random()*5)];
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 7000);
+}
+</script>
+
+</body>
+</html>
